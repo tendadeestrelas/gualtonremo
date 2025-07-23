@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gualton Remo | Artista Visual</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Montserrat', sans-serif; }
+        h1, h2, h3, .font-display { font-family: 'Playfair Display', serif; }
+        .hero-bg {
+            background-image:('./img/Foto de Fundo Home);/
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .gradient-overlay { background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.2)); }
+        .gallery-item { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .gallery-item:hover { transform: scale(1.05); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+        .modal { display: none; position: fixed; z-index: 100; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.9); align-items: center; justify-content: center; }
+        .modal-content { margin: auto; display: block; max-width: 80vw; max-height: 80vh; }
+        .close { position: absolute; top: 20px; right: 35px; color: #f1f1f1; font-size: 40px; font-weight: bold; transition: 0.3s; cursor: pointer; }
+    </style>
+</head>
+<body class="bg-black-100 text-green-800">
+
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">×</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <header class="bg-black shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <div>
+                <a href="#home" class="block">
+                    <img src="./img/Assinatura do Artista.png" alt="Assinatura Gualton Remo" class="h-12">
+                </a>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="text-lightgreen hover:text-amber-600 transition">Início</a>
+                <a href="#artist" class="text-white-600 hover:text-amber-600 transition">O Artista</a>
+                <a href="#galleries" class="text-white-600 hover:text-amber-600 transition">Galerias</a>
+                <a href="#videos" class="text-white-600 hover:text-amber-600 transition">Vídeos</a>
+                <a href="#certs" class="text-white-600 hover:text-amber-600 transition">Certificações</a>
+                <a href="#contact" class="text-white-600 hover:text-amber-600 transition">Contato</a>
+            </div>
+            <div class="md:hidden">
+                <button id="menu-btn" class="text-grey-600 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden">
+            <a href="#home" class="block py-2 px-4 text-sm hover:bg-gray-200">Início</a>
+            <a href="#artist" class="block py-2 px-4 text-sm hover:bg-gray-200">O Artista</a>
+            <a href="#galleries" class="block py-2 px-4 text-sm hover:bg-gray-200">Galerias</a>
+            <a href="#videos" class="block py-2 px-4 text-sm hover:bg-gray-200">Vídeos</a>
+            <a href="#certs" class="block py-2 px-4 text-sm hover:bg-gray-200">Certificações</a>
+            <a href="#contact" class="block py-2 px-4 text-sm hover:bg-gray-200">Contato</a>
+        </div>
+    </header>
+
+    <section id="home" class="hero-bg h-screen flex items-end">
+        <div class="gradient-overlay w-full h-full flex items-end">
+            <div class="container mx-auto px-6 py-20 text-white text-center">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4 leading-tight">Gualton Remo</h1>
+                <p class="text-lg md:text-2xl mb-8">Da memória afetiva de sua infancia em Boa Viagem à efervescência cultural de onde hoje vive, em Porto de Galinhas, Gualton recria a essência da cultura do Brasil em telas vibrantes e ao mesmo tempo sensíveis,trazendo em suas coleções, os simbolos da herança nordestina!</p>
+                <a href="https://wa.me/5581998631369?text=Olá!%20Gostaria%20de%20conhecer%20o%20acervo." target="_blank" class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-8 rounded-full transition duration-300 text-lg">Conheça o Acervo</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="artist" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12">O Artista</h2>
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-2/3 text-lg text-justify leading-relaxed">
+                    <h3 class="font-display text-2xl mb-4 text-amber-700"></h3>
+                    <p class="mb-4">"Analisar a obra de Gualton Remo é imergir na luz singular de Pernambuco. 
+Residente há vinte anos em Porto de Galinhas, materializa em sua produção artistica uma profunda conexão que transcende a geografia para explorar a alma local. 
+Suas telas, de texturas e cores vibrantes, não são meras representações paisagísticas; funcionam como portais para uma memória afetiva, um resgate da infância na orla de Boa Viagem, onde o aroma da maresia se entrelaçava às narrativas dos pescadores e o vai e vem das famílias em seus banhos de sol.
+                    <p class="mb-4">Com a espátula, o artista não apenas aplica a tinta, mas esculpe a memória. O uso magistral de pigmentos luminosos confere às obras uma vitalidade própria, uma energia que emana da tela, capturando a essência de Recife, do frevo, a força ancestral dos povos originários e a beleza de suas musas — personificações da cultura brasileira. A arte de Gualton Remo é um tributo a Pernambuco, à sua história e ao seu povo; um convite à percepção, visual e emocional, de um Brasil autêntico e milenar." Júlia Claudino - Curadoria Artistica.</p>
+                </div>
+                <div class="md:w-1/3 flex justify-center">
+                    <img src="./img/Certificado 05.jpg" alt="Foto do artista Gualton Remo" class="rounded-lg shadow-2xl w-full max-w-sm">
+                </div>
+            </div>
+        </div>
+    </section>
+
+         <section id="exhibitions" class="py-20 bg-amber-700 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold mb-4">Projetos e Exposições</h2>
+            <p class="text-xl max-w-3xl mx-auto mb-8">
+                Leve a força expressiva e a riqueza cromática de Gualton Remo para sua galeria, evento ou acervo. Oferecemos projetos de exposições que proporcionam uma imersão na cultura brasileira. Contate-nos para desenvolvermos uma proposta curatorial.
+            </p>
+            <a href="https://wa.me/5581998631369?text=Olá!%20Gostaria%20de%20solicitar%20uma%20proposta%20de%20exposição." target="_blank" class="bg-white hover:bg-gray-200 text-amber-700 font-bold py-3 px-8 rounded-full transition duration-300 text-lg">Solicitar Proposta via WhatsApp</a>
+        </div>
+    </section>
+
+    <section id="videos" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-display text-center text-gray-900 mb-12">Vídeos do Artista</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden p-4">
+                    <h3 class="font-display text-2xl font-semibold text-gray-900 mb-4 text-center">Série Indígenas com Ambientações</h3>
+                    <div style="position: relative; width: 100%; height: 0; padding-top: 56.25%;"><iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none;" src="https://www.canva.com/design/DAGtKNc31nI/26vlCmapO7AL39acm1zIPQ/view?embed" allowfullscreen></iframe></div>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden p-4">
+                    <h3 class="font-display text-2xl font-semibold text-gray-900 mb-4 text-center">Série Sertanejos</h3>
+                    <div style="position: relative; width: 100%; height: 0; padding-top: 56.25%;"><iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none;" src="https://www.canva.com/design/DAGtLWRovRU/Ke3x5XntI_wxhcluHUtZbA/view?embed" allowfullscreen></iframe></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="certs" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12">Reconhecimento Internacional e Portfólios</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 items-start mb-12">
+                <div class="gallery-item rounded-lg overflow-hidden shadow-lg cursor-pointer" onclick="openModal('./img/Certificado 01.jpg')"><img src="./img/Certificado 01.jpg" alt="Certificado Expo Brasil Amazônia" class="w-full h-auto object-contain"></div>
+                <div class="gallery-item rounded-lg overflow-hidden shadow-lg cursor-pointer" onclick="openModal('./img/Certificado 02.jpg')"><img src="./img/Certificado 02.jpg" alt="Certificado Art For Life, Bruxelas" class="w-full h-auto object-contain"></div>
+                <div class="gallery-item rounded-lg overflow-hidden shadow-lg cursor-pointer" onclick="openModal('./img/Certificado 03.jpg')"><img src="./img/Certificado 03.jpg" alt="Certificado Artnatic, Liechtenstein" class="w-full h-auto object-contain"></div>
+                <div class="gallery-item rounded-lg overflow-hidden shadow-lg cursor-pointer" onclick="openModal('./img/Certificado 04.jpg')"><img src="./img/Certificado 04.jpg" alt="Certificado Museum of the Americas" class="w-full h-auto object-contain"></div>
+                <div class="gallery-item rounded-lg overflow-hidden shadow-lg cursor-pointer" onclick="openModal('./img/Certificado 05.jpg')"><img src="./img/Certificado 05.jpg" alt="Certificado Núcleo de Letras e Artes de Portugal" class="w-full h-auto object-contain"></div>
+                <div class="gallery-item rounded-lg overflow-hidden shadow-lg cursor-pointer" onclick="openModal('./img/Certificado 06.jpg')"><img src="./img/Certificado 06.jpg" alt="Certificado Bienal de Cali" class="w-full h-auto object-contain"></div>
+                <div class="gallery-item rounded-lg overflow-hidden shadow-lg cursor-pointer" onclick="openModal('./img/Certificado 07.jpg')"><img src="./img/Certificado 07.jpg" alt="Certificado Exposição Eurarts, Madrid" class="w-full h-auto object-contain"></div>
+                <div class="gallery-item rounded-lg overflow-hidden shadow-lg cursor-pointer" onclick="openModal('./img/Certificado 08.jpg')"><img src="./img/Certificado 08.jpg" alt="Certificado Núcleo Acadêmico de Portugal" class="w-full h-auto object-contain"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-8">
+                 <a href="./docs/Gualton Remo - Histórico.pdf" target="_blank" class="bg-amber-600 text-white py-3 px-4 rounded-lg shadow-md hover:bg-amber-700 transition duration-300 text-center font-semibold text-sm flex items-center justify-center h-full">Histórico do Artista</a>
+                <a href="./docs/PORTFOLIO COMPLETO.pdf" target="_blank" class="bg-amber-600 text-white py-3 px-4 rounded-lg shadow-md hover:bg-amber-700 transition duration-300 text-center font-semibold text-sm flex items-center justify-center h-full">Portfólio Completo</a>
+                <a href="./docs/CATÁLOGO INDIGENAS.pdf" target="_blank" class="bg-amber-600 text-white py-3 px-4 rounded-lg shadow-md hover:bg-amber-700 transition duration-300 text-center font-semibold text-sm flex items-center justify-center h-full">Catálogo Série Indígenas</a>
+                <a href="./docs/CARNAVAL E ARTE_CATALOGO GUALTON REMO.pdf" target="_blank" class="bg-amber-600 text-white py-3 px-4 rounded-lg shadow-md hover:bg-amber-700 transition duration-300 text-center font-semibold text-sm flex items-center justify-center h-full">Catálogo Carnaval e Arte</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-gray-800 text-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12">Contato</h2>
+            <div class="max-w-xl mx-auto text-center">
+                <p class="text-lg mb-8">Para aquisição de obras, propostas de exposição ou mais informações, por favor, entre em contato através dos canais abaixo.</p>
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                    <a href="https://wa.me/5581998631369?text=Olá!%20Tenho%20interesse%20nas%20suas%20obras." target="_blank" class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-full transition duration-300 flex items-center justify-center gap-2 w-full sm:w-auto">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                        WhatsApp
+                    </a>
+                    <a href="mailto:gualtonremoartes@hotmail.com" class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-8 rounded-full transition duration-300 flex items-center justify-center gap-2 w-full sm:w-auto">
+                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                        E-mail
+                    </a>
+                </div>
+                 <div class="mt-8">
+                    <p><strong>Instagram:</strong> <a href="https://www.instagram.com/gualtonremoartes" target="_blank" class="hover:text-amber-400 transition">@gualtonremoartes</a></p>
+                    <p class="mt-2"><strong>Localização:</strong> Porto de Galinhas, PE / Brasil</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white py-6">
+        <div class="container mx-auto px-6 text-center">
+            <p>© 2025 Gualton Remo Artes. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImage');
+        function openModal(imgSrc) { modal.style.display = "flex"; modalImg.src = imgSrc; }
+        function closeModal() { modal.style.display = "none"; }
+        window.onclick = function(event) { if (event.target == modal) { closeModal(); } }
+        document.addEventListener('keydown', function(event) { if (event.key === "Escape") { closeModal(); } });
+    </script>
+</body>
+</html>
